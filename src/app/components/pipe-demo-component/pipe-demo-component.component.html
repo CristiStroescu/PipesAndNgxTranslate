@@ -1,0 +1,34 @@
+<div class="app">
+
+<select class="typeOfPipe" [(ngModel)]="typeOfThePipe">
+    <option value="none">{{'none'|translate}} </option>
+    <option value="uppercase">{{'uppercase'|translate}}</option>
+    <option value="lowercase">{{'lowercase'|translate}}</option>
+    <option value="titlecase">{{'titlecase' | translate}}</option>
+    <option value="date">{{'date'|translate}}</option>
+    <option value="currency">{{'currency'|translate}}</option>
+    <option value="titleCasePipe">TitleCasePipe</option>
+    <option value="myDatePipe">MyDatePipe</option>
+    <option value="myCurrencyPipe">MyCurrencyPipe</option>
+</select>
+
+
+<div>
+    <input [(ngModel)]="newWord" placeholder="{{'Add a word' | translate}}">
+    <button (click)="addWord()">{{'add' | translate}}</button>
+</div>
+
+
+<div *ngFor="let word of listOfWords; let index=index">
+    <p class="word" *ngIf="listOfUsedPipes[index]==='none'">{{word}}</p>
+    <p class="word" *ngIf="listOfUsedPipes[index]==='uppercase'">{{word | uppercase}}</p>
+    <p class="word" *ngIf="listOfUsedPipes[index]==='lowercase'">{{word | lowercase}}</p>
+    <p class="word" *ngIf="listOfUsedPipes[index]==='titlecase'">{{word | titlecase}}</p>
+    <p class="word" *ngIf="listOfUsedPipes[index]==='date'">{{word | date}}</p>
+    <p class="word" *ngIf="listOfUsedPipes[index]==='currency'">{{word | currency }}</p>
+    <p class="word" *ngIf="listOfUsedPipes[index]==='titleCasePipe'">{{word | titleCasePipe}}</p>
+    <p class="word" *ngIf="listOfUsedPipes[index]==='myDatePipe'">{{word | myDatePipe}}</p>
+    <p class="word" *ngIf="listOfUsedPipes[index]==='myCurrencyPipe'">{{word | myCurrencyPipe}}</p>
+</div>
+
+</div>

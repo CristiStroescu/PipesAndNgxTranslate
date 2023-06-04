@@ -1,0 +1,8 @@
+<select class="language" [(ngModel)]="language" (change)="onLanguageSelect()">
+    <option value="en">{{'English' | translate}} </option>
+    <option value="ro">{{'Romanian' | translate}} </option>
+    <option value="nl">{{'Dutch' | translate}}</option>
+    <option value="jp">{{'Japanese' | translate}}</option>
+</select>
+
+<app-pipe-demo-component></app-pipe-demo-component>
